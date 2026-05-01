@@ -1,24 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Color Picker App</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Color Picker</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <div class="container">
-        <h1>🎨 Color Picker</h1>
+  <div class="page">
+    <h1 class="heading">Color Picker</h1>
+    <p class="subheading">Pick a color and get its HEX, RGB and HSL values</p>
 
-        <input type="color" id="colorPicker">
+    <div class="card">
 
-        <div class="color-box" id="colorBox">
-            <p id="colorCode">#ffffff</p>
+      <!-- color preview -->
+      <div class="preview-box" id="previewBox">
+        <div class="preview-inner">
+          <input type="color" id="colorInput" value="#7F77DD" oninput="updateColor()" />
+          <p class="preview-label">Click to pick</p>
+        </div>
+      </div>
+
+      <!-- color values -->
+      <div class="values">
+
+        <div class="value-row">
+          <span class="value-label">HEX</span>
+          <span class="value-text" id="hexVal">#7F77DD</span>
+          <button class="copy-btn" onclick="copyValue('hexVal')">Copy</button>
         </div>
 
-        <button id="copyBtn">Copy Code</button>
-    </div>
+        <div class="value-row">
+          <span class="value-label">RGB</span>
+          <span class="value-text" id="rgbVal">rgb(127, 119, 221)</span>
+          <button class="copy-btn" onclick="copyValue('rgbVal')">Copy</button>
+        </div>
 
-    <script src="script.js"></script>
+        <div class="value-row">
+          <span class="value-label">HSL</span>
+          <span class="value-text" id="hslVal">hsl(244, 60%, 67%)</span>
+          <button class="copy-btn" onclick="copyValue('hslVal')">Copy</button>
+        </div>
+
+      </div>
+
+      <!-- sliders -->
+      <div class="sliders">
+        <div class="slider-row">
+          <span class="slider-label">R</span>
+          <input type="range" id="rSlider" min="0" max="255" value="127" oninput="updateFromSliders()" class="slider red-slider" />
+          <span class="slider-val" id="rVal">127</span>
+        </div>
+        <div class="slider-row">
+          <span class="slider-label">G</span>
+          <input type="range" id="gSlider" min="0" max="255" value="119" oninput="updateFromSliders()" class="slider green-slider" />
+          <span class="slider-val" id="gVal">119</span>
+        </div>
+        <div class="slider-row">
+          <span class="slider-label">B</span>
+          <input type="range" id="bSlider" min="0" max="255" value="221" oninput="updateFromSliders()" class="slider blue-slider" />
+          <span class="slider-val" id="bVal">221</span>
+        </div>
+      </div>
+
+      <!-- palette -->
+      <div class="palette-section">
+        <p class="palette-label">Quick Colors</p>
+        <div class="palette">
+          <div class="swatch" style="background:#7F77DD" onclick="setColor('#7F77DD')"></div>
+          <div class="swatch" style="background:#1D9E75" onclick="setColor('#1D9E75')"></div>
+          <div class="swatch" style="background:#D85A30" onclick="setColor('#D85A30')"></div>
+          <div class="swatch" style="background:#D4537E" onclick="setColor('#D4537E')"></div>
+          <div class="swatch" style="background:#185FA5" onclick="setColor('#185FA5')"></div>
+          <div class="swatch" style="background:#BA7517" onclick="setColor('#BA7517')"></div>
+          <div class="swatch" style="background:#111827" onclick="setColor('#111827')"></div>
+          <div class="swatch" style="background:#f0f2f5" onclick="setColor('#f0f2f5')" style="border:1px solid #e5e7eb"></div>
+        </div>
+      </div>
+
+      <!-- toast -->
+      <p class="toast" id="toast"></p>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
