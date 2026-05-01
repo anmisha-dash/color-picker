@@ -1,70 +1,28 @@
-# 🎨 Day 10 — Color Studio (Advanced Color Picker)
+# Day 10 — Color Picker Tool
 
-A modern and interactive **Color Picker Web App** built using pure HTML, CSS, and JavaScript.
+An interactive color picker that shows HEX, RGB and HSL values instantly.
 
----
+## Preview
+![Color Picker](color-picker.png)
 
-## 🔍 Preview
+## Features
+- Color wheel picker to select any color
+- Live HEX, RGB and HSL value display
+- RGB sliders to fine-tune colors
+- One-click copy for each color format
+- Quick color palette with 8 preset colors
+- Toast notification on copy
 
-Color Studio UI with gradient preview, color formats, and saved palette.
+## Tech Stack
+- HTML5
+- CSS3 (transitions, accent-color)
+- JavaScript (color conversion, clipboard API)
 
----
+## What I Learned
+- Converting HEX to RGB and RGB to HSL
+- Using the Clipboard API to copy text
+- Syncing multiple inputs (color picker + sliders)
+- Real-time DOM updates with oninput
 
-## ✨ Features
-
-* Dual color picker for gradient selection
-* Live gradient preview
-* Displays color in:
-
-  * HEX
-  * RGB
-  * HSL
-* Copy color code to clipboard
-* Save favorite colors (Local Storage)
-* Smooth animations and modern UI
-
----
-
-## 🛠️ Tech Stack
-
-* HTML5
-* CSS3 (Glassmorphism, gradients, animations)
-* JavaScript (DOM manipulation, Local Storage)
-
----
-
-## 📚 What I Learned
-
-* Working with DOM events and user input
-* Converting color formats (HEX → RGB → HSL)
-* Using Local Storage to save data
-* Creating modern UI with CSS effects
-* Improving user experience with interactive features
-
----
-
-## 📁 Project Structure
-
-```
-day-10-color-picker/
-│── index.html
-│── style.css
-│── script.js
-│── README.md
-```
-
----
-
-## 🚀 How to Run
-
-1. Clone the repository
-2. Open the project folder
-3. Run `index.html` in your browser
-
----
-
-## 🎯 Part of
-
-**30 Days 30 Projects Challenge**
-Building the web, one day at a time 🚀
-
+## Part of
+[30 Days 30 Projects](https://github.com/anmisha-dash/30-days-30-projects) challenge
